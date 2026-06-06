@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Badge } from "@/components/ui/badge"
 
 const faqs = [
   {
@@ -36,8 +37,8 @@ export function Faq() {
   return (
     <section id="faq" className="mx-auto max-w-3xl scroll-mt-20 px-6 py-20 sm:py-28">
       <div className="text-center">
-        <p className="text-sm font-medium text-primary">FAQ</p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+        <Badge variant="outline">FAQ</Badge>
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
           Frequently asked questions
         </h2>
       </div>

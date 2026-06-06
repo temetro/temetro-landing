@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import { DiscordIcon, GitHubIcon } from "@/components/landing/brand-icons"
 
 const columns = [
@@ -8,6 +10,7 @@ const columns = [
     title: "Product",
     links: [
       { label: "Features", href: "#features" },
+      { label: "Open source", href: "#open-source" },
       { label: "Privacy", href: "#privacy" },
       { label: "FAQ", href: "#faq" },
     ],
@@ -71,27 +74,31 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
+        <Separator className="mt-12" />
+
+        <div className="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} temetro · Open source under the MIT License
           </p>
-          <div className="flex items-center gap-2">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noreferrer"
+          <div className="flex items-center gap-1">
+            <Button
               aria-label="GitHub"
-              className="flex size-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground"
+              render={<a href="https://github.com" target="_blank" rel="noreferrer" />}
+              size="icon-sm"
+              variant="ghost"
             >
               <GitHubIcon className="size-[18px]" />
-            </a>
-            <a
-              href="#"
+            </Button>
+            <Button
               aria-label="Discord"
-              className="flex size-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground"
+              render={<a href="#" />}
+              size="icon-sm"
+              variant="ghost"
             >
               <DiscordIcon className="size-[18px]" />
-            </a>
+            </Button>
           </div>
         </div>
       </div>

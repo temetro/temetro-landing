@@ -8,8 +8,9 @@ import {
   Server,
 } from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 
 const features = [
   {
@@ -48,8 +49,8 @@ export function Features() {
   return (
     <section id="features" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="text-sm font-medium text-primary">What is temetro?</p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+        <Badge variant="outline">What is temetro?</Badge>
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           An AI chat that knows your records
         </h2>
         <p className="mt-4 text-pretty text-muted-foreground">
@@ -58,23 +59,27 @@ export function Features() {
         </p>
       </div>
 
-      <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((feature) => (
-          <div key={feature.title} className="bg-card p-6">
-            <div className="flex size-10 items-center justify-center rounded-xl border border-border bg-background text-primary">
-              <feature.icon className="size-5" />
-            </div>
-            <h3 className="mt-4 text-base font-medium">{feature.title}</h3>
-            <p className="mt-2 text-sm text-pretty text-muted-foreground">{feature.desc}</p>
-          </div>
+          <Card className="gap-0" key={feature.title} size="sm">
+            <CardContent className="flex flex-col gap-3">
+              <div className="flex size-10 items-center justify-center rounded-xl border border-border bg-background text-foreground">
+                <feature.icon className="size-5" />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <CardTitle>{feature.title}</CardTitle>
+                <CardDescription>{feature.desc}</CardDescription>
+              </div>
+            </CardContent>
+          </Card>
         ))}
       </div>
 
       <div className="mt-10 flex justify-center">
-        <a href="#" className={cn(buttonVariants({ variant: "outline" }), "group rounded-lg")}>
+        <Button className="group" render={<a href="#" />} variant="outline">
           Read the docs
           <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-        </a>
+        </Button>
       </div>
     </section>
   )

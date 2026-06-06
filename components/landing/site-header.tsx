@@ -1,15 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { GitHubIcon } from "@/components/landing/brand-icons"
 
 const navLinks = [
   { label: "Features", href: "#features" },
+  { label: "Open source", href: "#open-source" },
   { label: "Privacy", href: "#privacy" },
   { label: "FAQ", href: "#faq" },
-  { label: "Docs", href: "#" },
 ]
 
 export function SiteHeader() {
@@ -41,21 +40,18 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-1.5">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
+          <Button
             aria-label="temetro on GitHub"
-            className={cn(
-              buttonVariants({ variant: "ghost", size: "icon-sm" }),
-              "text-muted-foreground hover:text-foreground"
-            )}
+            className="text-muted-foreground hover:text-foreground"
+            render={<a href="https://github.com" target="_blank" rel="noreferrer" />}
+            size="icon-sm"
+            variant="ghost"
           >
             <GitHubIcon className="size-[18px]" />
-          </a>
-          <Link href="/register" className={cn(buttonVariants({ size: "sm" }), "rounded-lg")}>
+          </Button>
+          <Button render={<Link href="/register" />} size="sm">
             Get started
-          </Link>
+          </Button>
         </div>
       </div>
     </header>

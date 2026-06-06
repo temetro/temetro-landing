@@ -1,5 +1,7 @@
 import { Database, Lock, ScrollText, Server, ShieldCheck } from "lucide-react"
 
+import { Badge } from "@/components/ui/badge"
+
 const points = [
   {
     icon: Lock,
@@ -34,12 +36,12 @@ export function Privacy() {
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-border bg-card/40 px-6 py-14 sm:px-12">
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-20 -right-20 size-64 rounded-full bg-primary/10 blur-3xl"
+          className="pointer-events-none absolute -top-20 -right-20 size-64 rounded-full bg-foreground/5 blur-3xl"
         />
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           <div>
-            <p className="text-sm font-medium text-primary">Privacy first</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+            <Badge variant="outline">Privacy first</Badge>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
               Built for the most sensitive data there is
             </h2>
             <p className="mt-4 text-pretty text-muted-foreground">
@@ -50,7 +52,7 @@ export function Privacy() {
           <ul className="grid gap-6 sm:grid-cols-2">
             {points.map((point) => (
               <li key={point.title} className="flex gap-3">
-                <point.icon className="mt-0.5 size-5 shrink-0 text-primary" />
+                <point.icon className="mt-0.5 size-5 shrink-0 text-foreground" />
                 <div>
                   <h3 className="text-sm font-medium">{point.title}</h3>
                   <p className="mt-1 text-sm text-pretty text-muted-foreground">{point.desc}</p>
