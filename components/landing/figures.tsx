@@ -1,11 +1,10 @@
 import { cn } from "@/lib/utils"
 
 // Dependency-free, monochrome SVG "figures" for the open-source band (the
-// reference image's Fig 1/2/3 look) and a small sparkline reused by the hero
-// product preview. All decorative (aria-hidden), all driven by `currentColor`
-// so they pick up whatever text color the wrapper sets — no chart library, no
-// client hooks, so these render on the server. Math adapted from the frontend's
-// components/chat/sparkline.tsx.
+// reference image's Fig 1/2/3 look). All decorative (aria-hidden), all driven
+// by `currentColor` so they pick up whatever text color the wrapper sets — no
+// chart library, no client hooks, so these render on the server. Math adapted
+// from the frontend's components/chat/sparkline.tsx.
 
 // Deterministic pseudo-noise in [0, 1) so the "random" textures are stable
 // across renders (no hydration drift) without seeding state.
@@ -148,60 +147,6 @@ export function BarsFigure({ className }: { className?: string }) {
           y={(H - b.h).toFixed(1)}
         />
       ))}
-    </svg>
-  )
-}
-
-// A small, non-interactive area sparkline for the hero labs card. Stretches to
-// its container; colored via currentColor (defaults to text-foreground).
-export function MiniSparkline({
-  points,
-  className,
-}: {
-  points: number[]
-  className?: string
-}) {
-  if (points.length === 0) return null
-  const W = 100
-  const top = 3
-  const bottom = 30
-  const H = 32
-  const min = Math.min(...points)
-  const max = Math.max(...points)
-  const range = max - min || 1
-  const coords = points.map((v, i) => {
-    const x = points.length === 1 ? W / 2 : (i / (points.length - 1)) * W
-    const y = bottom - ((v - min) / range) * (bottom - top)
-    return [x, y] as const
-  })
-  const line = coords
-    .map(([x, y], i) => `${i === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`)
-    .join(" ")
-  const area = `${line} L${W},${H} L0,${H} Z`
-
-  return (
-    <svg
-      aria-hidden="true"
-      className={cn("h-full w-full text-foreground", className)}
-      preserveAspectRatio="none"
-      viewBox={`0 0 ${W} ${H}`}
-    >
-      <defs>
-        <linearGradient id="fig-mini-grad" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="currentColor" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <path d={area} fill="url(#fig-mini-grad)" stroke="none" />
-      <path
-        d={line}
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        vectorEffect="non-scaling-stroke"
-      />
     </svg>
   )
 }

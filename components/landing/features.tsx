@@ -1,11 +1,11 @@
 import {
   ArrowRight,
-  FileCheck2,
-  FileClock,
+  CalendarClock,
   GitFork,
   KeyRound,
   MessageSquare,
   Server,
+  Users,
 } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
@@ -14,34 +14,34 @@ import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/c
 
 const features = [
   {
-    icon: MessageSquare,
-    title: "Natural-language lookup",
-    desc: "Ask for a patient's history, labs, or medications in plain English — no query syntax, no clicking through tabs.",
-  },
-  {
-    icon: FileCheck2,
-    title: "Grounded, cited answers",
-    desc: "Every response links back to the underlying record, so you can verify the source in one click.",
+    icon: Users,
+    title: "Patient records",
+    desc: "Pull up, create, and edit a patient's history, medications, and labs — organized into clean record cards.",
   },
   {
     icon: KeyRound,
     title: "Role-based access",
-    desc: "Clinicians only ever see the patients and fields they're authorized to access.",
+    desc: "Owner, admin, member, and viewer roles per clinic, so your team only ever sees what it should.",
+  },
+  {
+    icon: CalendarClock,
+    title: "Your clinic in one place",
+    desc: "Scheduling, prescriptions, notes, and tasks live alongside the record — not scattered across tools.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Ask in plain language",
+    desc: "A conversational way to find what you need across the record. The AI chat is in active development.",
   },
   {
     icon: Server,
     title: "Self-hostable",
-    desc: "Run temetro entirely on your own infrastructure. Patient data never has to leave your network.",
+    desc: "Run temetro on your own infrastructure with Docker and Postgres. Patient data stays on your network.",
   },
   {
     icon: GitFork,
     title: "Open source",
     desc: "Audit every line, extend it to your workflow, and contribute back. No black boxes.",
-  },
-  {
-    icon: FileClock,
-    title: "Audit logging",
-    desc: "Every query and answer is logged with full context for compliance and review.",
   },
 ]
 
@@ -51,11 +51,11 @@ export function Features() {
       <div className="mx-auto max-w-2xl text-center">
         <Badge variant="outline">What is temetro?</Badge>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-          An AI chat that knows your records
+          Everything around the patient record
         </h2>
         <p className="mt-4 text-pretty text-muted-foreground">
-          temetro sits on top of your existing patient data and turns it into a conversation. Built
-          for the realities of clinical work — accurate, accountable, and private.
+          temetro brings the day-to-day of clinical work — records, scheduling, prescriptions, notes,
+          and tasks — into one open-source workspace your whole team can use.
         </p>
       </div>
 

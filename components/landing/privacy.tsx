@@ -1,32 +1,27 @@
-import { Database, Lock, ScrollText, Server, ShieldCheck } from "lucide-react"
+import { Eye, KeyRound, Lock, Server } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 
 const points = [
   {
-    icon: Lock,
-    title: "PHI stays in your environment",
-    desc: "Deploy inside your own network so protected health information never leaves your control.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "HIPAA-aligned by design",
-    desc: "Access controls, encryption, and audit trails are built in, not bolted on.",
-  },
-  {
     icon: Server,
     title: "Self-host or on-prem",
-    desc: "Run on your infrastructure or a private cloud. You choose where the data lives.",
+    desc: "Run on your own infrastructure or a private cloud with Docker and Postgres. You choose where data lives.",
   },
   {
-    icon: ScrollText,
-    title: "Full audit trail",
-    desc: "Every interaction is recorded so you can answer who saw what, and when.",
+    icon: Lock,
+    title: "PHI stays in your network",
+    desc: "Because you deploy temetro, protected health information never has to leave your environment.",
   },
   {
-    icon: Database,
-    title: "Configurable retention",
-    desc: "Set your own data-retention and logging policies to match your compliance needs.",
+    icon: KeyRound,
+    title: "Role-based access control",
+    desc: "Owner, admin, member, and viewer roles per clinic gate who can see and change records.",
+  },
+  {
+    icon: Eye,
+    title: "Open and auditable",
+    desc: "The full source is open, so you can review exactly how data is handled — no black boxes.",
   },
 ]
 
@@ -45,8 +40,8 @@ export function Privacy() {
               Built for the most sensitive data there is
             </h2>
             <p className="mt-4 text-pretty text-muted-foreground">
-              Patient information demands more than a privacy policy. temetro is architected so that
-              you stay in control of where data lives and who can reach it.
+              Patient information demands real control, not just a privacy policy. temetro is
+              architected so you decide where data lives and who can reach it.
             </p>
           </div>
           <ul className="grid gap-6 sm:grid-cols-2">

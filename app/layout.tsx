@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "temetro — the open-source AI assistant for clinicians",
+  title: "temetro — the open-source workspace for patient care",
   description:
-    "Ask in plain language and temetro retrieves the right patient information — grounded in your records, with every source cited. Open source and built for privacy.",
+    "An open-source, self-hostable clinical workspace: patient records, scheduling, prescriptions, and notes with role-based access for your care team — plus an AI chat in active development.",
 };
 
 export default function RootLayout({

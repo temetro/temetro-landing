@@ -9,11 +9,11 @@ import { Badge } from "@/components/ui/badge"
 const faqs = [
   {
     q: "What is temetro?",
-    a: "temetro is an open-source AI chat that lets clinicians retrieve patient information in plain language. It connects to your records and answers questions with cited sources.",
+    a: "temetro is an open-source workspace for clinics: patient records, scheduling, prescriptions, notes, and tasks in one place, with role-based access for your care team — plus an AI chat (in active development) to find what you need by asking.",
   },
   {
-    q: "Is temetro HIPAA compliant?",
-    a: "temetro is built to support HIPAA compliance with role-based access, audit logging, and encryption. Because you self-host it, compliance ultimately depends on your deployment — but the building blocks are there.",
+    q: "Does temetro help with HIPAA?",
+    a: "temetro gives you building blocks that support compliance — role-based access and self-hosting that keeps PHI on your own network. Because you deploy it, meeting HIPAA (or any regime) ultimately depends on your environment and controls.",
   },
   {
     q: "Where is patient data stored?",
@@ -21,11 +21,11 @@ const faqs = [
   },
   {
     q: "Can I self-host temetro?",
-    a: "Yes. Self-hosting is a first-class deployment option. You can run temetro on-prem or in a private cloud you control.",
+    a: "Yes. Self-hosting is a first-class deployment option — Docker and Postgres — so you can run temetro on-prem or in a private cloud you control.",
   },
   {
-    q: "Which AI models does it use?",
-    a: "temetro is model-agnostic. You can connect hosted models or run open models locally, depending on your privacy and performance needs.",
+    q: "Does it use AI?",
+    a: "The AI chat is in active development. temetro is designed to be model-agnostic, so you'll be able to connect a hosted model or run an open model locally depending on your privacy needs.",
   },
   {
     q: "Is temetro really open source?",

@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { GitHubIcon } from "@/components/landing/brand-icons"
-import { ProductPreview } from "@/components/landing/product-preview"
 
 export function Hero() {
   return (
@@ -16,7 +15,7 @@ export function Hero() {
         <div className="h-[420px] w-[820px] max-w-full rounded-full bg-foreground/10 blur-[140px]" />
       </div>
 
-      <div className="mx-auto max-w-3xl px-6 pt-24 pb-12 text-center sm:pt-28">
+      <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 text-center sm:pt-32 sm:pb-28">
         <a
           href="https://github.com"
           target="_blank"
@@ -24,17 +23,18 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-3 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
         >
           <span className="size-1.5 rounded-full bg-foreground" />
-          Open source · Built for clinicians
+          Open source · Built for clinics
         </a>
 
         <h1 className="mt-6 text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
-          Patient information,
-          <br className="hidden sm:block" /> one conversation away
+          The open-source workspace
+          <br className="hidden sm:block" /> for patient care
         </h1>
 
         <p className="mx-auto mt-5 max-w-xl text-base text-pretty text-muted-foreground sm:text-lg">
-          temetro is the open-source AI assistant for clinicians. Ask in plain language and get the
-          right patient information back — grounded in your records, with every source cited.
+          temetro brings your clinic&apos;s patient records, scheduling, prescriptions, and notes
+          into one place — with role-based access for your whole care team. Self-hostable by design,
+          with an AI chat in active development.
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -57,11 +57,6 @@ export function Hero() {
             Star on GitHub
           </Button>
         </div>
-      </div>
-
-      {/* A static mock of the real product (chat → patient record cards). */}
-      <div className="mx-auto max-w-4xl px-6 pb-20">
-        <ProductPreview />
       </div>
     </section>
   )

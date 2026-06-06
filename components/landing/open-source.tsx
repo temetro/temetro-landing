@@ -7,14 +7,14 @@ import { AreaFigure, BarsFigure, DotMatrixFigure } from "@/components/landing/fi
 const figures = [
   {
     n: "Fig 1.",
-    title: "Grounded & cited",
-    desc: "Every answer links back to the underlying record.",
+    title: "Your records, organized",
+    desc: "Pull up a patient's history as clean record cards.",
     Figure: AreaFigure,
   },
   {
     n: "Fig 2.",
     title: "Patient-owned data",
-    desc: "Records can live on the patient's own device, signed.",
+    desc: "The model temetro is building toward — records on the patient's own device.",
     Figure: DotMatrixFigure,
   },
   {
@@ -28,7 +28,7 @@ const figures = [
 const chips = [
   { k: "License", v: "MIT" },
   { k: "Deploy", v: "self-host / on-prem" },
-  { k: "Answers", v: "always cited" },
+  { k: "Access", v: "role-based" },
 ]
 
 export function OpenSource() {
@@ -53,11 +53,10 @@ export function OpenSource() {
         <p className="font-mono text-sm/6 text-muted-foreground">
           <span className="text-foreground">[*]</span> temetro is{" "}
           <span className="font-medium text-foreground">open source</span> and{" "}
-          <span className="font-medium text-foreground">MIT-licensed</span>. Every answer is{" "}
-          <span className="font-medium text-foreground">grounded</span> in your records and{" "}
-          <span className="font-medium text-foreground">cited</span> to the source — and the whole
-          thing is <span className="font-medium text-foreground">self-hostable</span>, so patient
-          data never leaves your network.
+          <span className="font-medium text-foreground">MIT-licensed</span>, with{" "}
+          <span className="font-medium text-foreground">role-based access</span> for your whole care
+          team. It&apos;s <span className="font-medium text-foreground">self-hostable</span> by
+          design, so patient data never leaves your network.
         </p>
       </div>
 

@@ -50,8 +50,8 @@ export function SiteFooter() {
               <span className="text-[15px] font-semibold tracking-tight">temetro</span>
             </Link>
             <p className="mt-4 text-sm text-pretty text-muted-foreground">
-              The open-source AI assistant for clinicians. Retrieve patient information by simply
-              asking.
+              The open-source workspace for patient care — records, scheduling, prescriptions, and
+              notes in one place.
             </p>
           </div>
 
