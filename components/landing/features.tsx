@@ -76,7 +76,12 @@ export function Features() {
       </div>
 
       <div className="mt-10 flex justify-center">
-        <Button className="group" render={<a href="#" />} variant="outline">
+        <Button
+          className="group"
+          nativeButton={false}
+          render={<a href="#" />}
+          variant="outline"
+        >
           Read the docs
           <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
         </Button>

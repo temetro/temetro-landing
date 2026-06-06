@@ -38,11 +38,17 @@ export function Hero() {
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button className="group" render={<Link href="/register" />} size="lg">
+          <Button
+            className="group"
+            nativeButton={false}
+            render={<Link href="/register" />}
+            size="lg"
+          >
             Get started
             <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
           </Button>
           <Button
+            nativeButton={false}
             render={<a href="https://github.com" target="_blank" rel="noreferrer" />}
             size="lg"
             variant="outline"

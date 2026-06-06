@@ -43,13 +43,14 @@ export function SiteHeader() {
           <Button
             aria-label="temetro on GitHub"
             className="text-muted-foreground hover:text-foreground"
+            nativeButton={false}
             render={<a href="https://github.com" target="_blank" rel="noreferrer" />}
             size="icon-sm"
             variant="ghost"
           >
             <GitHubIcon className="size-[18px]" />
           </Button>
-          <Button render={<Link href="/register" />} size="sm">
+          <Button nativeButton={false} render={<Link href="/register" />} size="sm">
             Get started
           </Button>
         </div>

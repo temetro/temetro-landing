@@ -84,6 +84,7 @@ export function SiteFooter() {
             <Button
               aria-label="GitHub"
               className="text-muted-foreground hover:text-foreground"
+              nativeButton={false}
               render={<a href="https://github.com" target="_blank" rel="noreferrer" />}
               size="icon-sm"
               variant="ghost"
@@ -93,6 +94,7 @@ export function SiteFooter() {
             <Button
               aria-label="Discord"
               className="text-muted-foreground hover:text-foreground"
+              nativeButton={false}
               render={<a href="#" />}
               size="icon-sm"
               variant="ghost"
