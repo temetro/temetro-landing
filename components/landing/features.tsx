@@ -79,7 +79,7 @@ export function Features() {
         <Button
           className="group"
           nativeButton={false}
-          render={<a href="#" />}
+          render={<a href="https://docs.temetro.com" />}
           variant="outline"
         >
           Read the docs

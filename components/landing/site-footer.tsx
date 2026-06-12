@@ -18,7 +18,7 @@ const columns = [
   {
     title: "Resources",
     links: [
-      { label: "Docs", href: "#" },
+      { label: "Docs", href: "https://docs.temetro.com" },
       { label: "Changelog", href: "#" },
       { label: "GitHub", href: "https://github.com" },
     ],
