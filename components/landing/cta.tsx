@@ -34,7 +34,7 @@ export function CtaBand() {
           </Button>
           <Button
             nativeButton={false}
-            render={<a href="https://github.com" target="_blank" rel="noreferrer" />}
+            render={<a href="https://github.com/temetro/temetro" target="_blank" rel="noreferrer" />}
             size="lg"
             variant="outline"
           >

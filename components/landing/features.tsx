@@ -21,7 +21,7 @@ const features = [
   {
     icon: KeyRound,
     title: "Role-based access",
-    desc: "Owner, admin, member, and viewer roles per clinic, so your team only ever sees what it should.",
+    desc: "Owner, admin, clinician, reception, pharmacy, and lab roles per clinic, so your team only ever sees what it should.",
   },
   {
     icon: CalendarClock,
@@ -31,7 +31,7 @@ const features = [
   {
     icon: MessageSquare,
     title: "Ask in plain language",
-    desc: "A conversational way to find what you need across the record. The AI chat is in active development.",
+    desc: "A built-in, model-agnostic AI chat that finds what you need across the record — just ask.",
   },
   {
     icon: Server,

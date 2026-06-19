@@ -20,7 +20,7 @@ const columns = [
     links: [
       { label: "Docs", href: "https://docs.temetro.com" },
       { label: "Changelog", href: "#" },
-      { label: "GitHub", href: "https://github.com" },
+      { label: "GitHub", href: "https://github.com/temetro/temetro" },
     ],
   },
   {
@@ -85,7 +85,7 @@ export function SiteFooter() {
               aria-label="GitHub"
               className="text-muted-foreground hover:text-foreground"
               nativeButton={false}
-              render={<a href="https://github.com" target="_blank" rel="noreferrer" />}
+              render={<a href="https://github.com/temetro/temetro" target="_blank" rel="noreferrer" />}
               size="icon-sm"
               variant="ghost"
             >

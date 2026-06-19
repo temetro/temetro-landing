@@ -17,7 +17,7 @@ export function Hero() {
 
       <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 text-center sm:pt-32 sm:pb-28">
         <a
-          href="https://github.com"
+          href="https://github.com/temetro/temetro"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-3 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
@@ -32,9 +32,8 @@ export function Hero() {
         </h1>
 
         <p className="mx-auto mt-5 max-w-xl text-base text-pretty text-muted-foreground sm:text-lg">
-          temetro brings your clinic&apos;s patient records, scheduling, prescriptions, and notes
-          into one place — with role-based access for your whole care team. Self-hostable by design,
-          with an AI chat in active development.
+          Patient records, scheduling, prescriptions and notes in one place — with role-based access,
+          a built-in AI chat, and self-hosting by design.
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -49,7 +48,7 @@ export function Hero() {
           </Button>
           <Button
             nativeButton={false}
-            render={<a href="https://github.com" target="_blank" rel="noreferrer" />}
+            render={<a href="https://github.com/temetro/temetro" target="_blank" rel="noreferrer" />}
             size="lg"
             variant="outline"
           >

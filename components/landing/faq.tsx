@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 const faqs = [
   {
     q: "What is temetro?",
-    a: "temetro is an open-source workspace for clinics: patient records, scheduling, prescriptions, notes, and tasks in one place, with role-based access for your care team — plus an AI chat (in active development) to find what you need by asking.",
+    a: "temetro is an open-source workspace for clinics: patient records, scheduling, prescriptions, notes, and tasks in one place, with role-based access for your care team — plus a built-in AI chat to find what you need by asking.",
   },
   {
     q: "Does temetro help with HIPAA?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Does it use AI?",
-    a: "The AI chat is in active development. temetro is designed to be model-agnostic, so you'll be able to connect a hosted model or run an open model locally depending on your privacy needs.",
+    a: "Yes — temetro has a built-in AI chat for working with the record. It's model-agnostic, so you can connect a hosted model or run an open model locally depending on your privacy needs.",
   },
   {
     q: "Is temetro really open source?",

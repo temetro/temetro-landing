@@ -16,7 +16,7 @@ const points = [
   {
     icon: KeyRound,
     title: "Role-based access control",
-    desc: "Owner, admin, member, and viewer roles per clinic gate who can see and change records.",
+    desc: "Owner, admin, clinician, reception, pharmacy, and lab roles per clinic gate who can see and change records.",
   },
   {
     icon: Eye,
