@@ -4,12 +4,12 @@ import { ArrowRight, Check } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { CtaBand } from "@/components/landing/cta"
+import { FeatureFigure } from "@/components/landing/feature-figure"
 import { SiteFooter } from "@/components/landing/site-footer"
 import { SiteHeader } from "@/components/landing/site-header"
 import type { Feature } from "@/components/landing/feature-data"
 
 export function FeaturePage({ feature }: { feature: Feature }) {
-  const Icon = feature.icon
   return (
     <>
       <SiteHeader />
@@ -23,13 +23,8 @@ export function FeaturePage({ feature }: { feature: Feature }) {
             <div className="h-[420px] w-[820px] max-w-full rounded-full bg-foreground/10 blur-[140px]" />
           </div>
 
-          <div className="mx-auto max-w-3xl px-6 pt-24 pb-16 text-center sm:pt-32 sm:pb-20">
-            <div className="mx-auto flex size-12 items-center justify-center rounded-2xl border border-border bg-card/50 text-foreground">
-              <Icon className="size-6" />
-            </div>
-            <Badge className="mt-6" variant="outline">
-              {feature.badge}
-            </Badge>
+          <div className="mx-auto max-w-3xl px-6 pt-24 pb-10 text-center sm:pt-32 sm:pb-12">
+            <Badge variant="outline">{feature.badge}</Badge>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
               {feature.title}
             </h1>
@@ -55,6 +50,11 @@ export function FeaturePage({ feature }: { feature: Feature }) {
                 Read the docs
               </Button>
             </div>
+          </div>
+
+          {/* Polar-style hero visual */}
+          <div className="mx-auto max-w-4xl px-6 pb-16 sm:pb-20">
+            <FeatureFigure icon={feature.icon} />
           </div>
         </section>
 
