@@ -3,12 +3,11 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { GitHubIcon } from "@/components/landing/brand-icons"
+import { FeaturesMenu, ResourcesMenu } from "@/components/landing/nav-menu"
 
-const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Open source", href: "#open-source" },
-  { label: "Privacy", href: "#privacy" },
-  { label: "FAQ", href: "#faq" },
+const plainLinks = [
+  { label: "Privacy", href: "/#privacy" },
+  { label: "FAQ", href: "/#faq" },
 ]
 
 export function SiteHeader() {
@@ -28,14 +27,16 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
-          {navLinks.map((link) => (
-            <a
+          <FeaturesMenu />
+          <ResourcesMenu />
+          {plainLinks.map((link) => (
+            <Link
               key={link.label}
               href={link.href}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 

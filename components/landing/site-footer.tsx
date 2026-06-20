@@ -3,32 +3,25 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { DiscordIcon, GitHubIcon } from "@/components/landing/brand-icons"
+import { GitHubIcon } from "@/components/landing/brand-icons"
 
 const columns = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "Open source", href: "#open-source" },
-      { label: "Privacy", href: "#privacy" },
-      { label: "FAQ", href: "#faq" },
+      { label: "Features", href: "/#features" },
+      { label: "Open source", href: "/#open-source" },
+      { label: "Privacy", href: "/#privacy" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {
     title: "Resources",
     links: [
       { label: "Docs", href: "https://docs.temetro.com" },
-      { label: "Changelog", href: "#" },
+      { label: "Changelog", href: "https://docs.temetro.com/docs/changelog" },
+      { label: "Roadmap", href: "https://docs.temetro.com/docs/roadmap" },
       { label: "GitHub", href: "https://github.com/temetro/temetro" },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      { label: "Discord", href: "#" },
-      { label: "Discussions", href: "#" },
-      { label: "Contributing", href: "#" },
     ],
   },
 ]
@@ -37,7 +30,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto max-w-6xl px-6 py-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
           <div className="max-w-xs">
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -90,16 +83,6 @@ export function SiteFooter() {
               variant="ghost"
             >
               <GitHubIcon className="size-[18px]" />
-            </Button>
-            <Button
-              aria-label="Discord"
-              className="text-muted-foreground hover:text-foreground"
-              nativeButton={false}
-              render={<a href="#" />}
-              size="icon-sm"
-              variant="ghost"
-            >
-              <DiscordIcon className="size-[18px]" />
             </Button>
           </div>
         </div>
