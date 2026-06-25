@@ -6,7 +6,7 @@ import { GitHubIcon } from "@/components/landing/brand-icons"
 import { FeaturesMenu, ResourcesMenu } from "@/components/landing/nav-menu"
 
 const plainLinks = [
-  { label: "Privacy", href: "/#privacy" },
+  { label: "Story", href: "/story" },
   { label: "FAQ", href: "/#faq" },
 ]
 

@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 
 // Dependency-free, monochrome SVG "figures" for the open-source band (the
 // reference image's Fig 1/2/3 look). All decorative (aria-hidden), all driven
-// by `currentColor` so they pick up whatever text color the wrapper sets — no
+// by `currentColor` so they pick up whatever text color the wrapper sets, with no
 // chart library, no client hooks, so these render on the server. Math adapted
 // from the frontend's components/chat/sparkline.tsx.
 
@@ -13,7 +13,95 @@ function noise(n: number) {
   return x - Math.floor(x)
 }
 
-// Fig 1 — a rising growth curve with a fine vertical-hatch fill beneath it.
+// Shared frame for the purpose-built figures below: a square-ish illustration
+// drawn in line-art that sits centered in its caption card.
+function FigureFrame({
+  children,
+  className,
+  viewBox = "0 0 200 140",
+}: {
+  children: React.ReactNode
+  className?: string
+  viewBox?: string
+}) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={cn("h-full w-full text-foreground", className)}
+      fill="none"
+      preserveAspectRatio="xMidYMid meet"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      viewBox={viewBox}
+    >
+      {children}
+    </svg>
+  )
+}
+
+// "Your records, organized": a stack of clean record cards with a header row
+// (avatar + lines) and list rows beneath, the way a chart reads in temetro.
+export function RecordsFigure({ className }: { className?: string }) {
+  return (
+    <FigureFrame className={className}>
+      {/* back cards, offset for depth */}
+      <rect x="44" y="20" width="120" height="96" rx="10" opacity="0.25" strokeWidth="1.5" />
+      <rect x="38" y="26" width="120" height="96" rx="10" opacity="0.45" strokeWidth="1.5" />
+      {/* front card */}
+      <rect x="32" y="32" width="120" height="80" rx="10" strokeWidth="1.75" />
+      {/* avatar + header lines */}
+      <circle cx="50" cy="50" r="7" strokeWidth="1.5" />
+      <line x1="64" y1="46" x2="132" y2="46" strokeWidth="1.5" />
+      <line x1="64" y1="54" x2="116" y2="54" strokeWidth="1.5" opacity="0.6" />
+      {/* list rows */}
+      <line x1="44" y1="72" x2="140" y2="72" strokeWidth="1.5" opacity="0.55" />
+      <line x1="44" y1="84" x2="140" y2="84" strokeWidth="1.5" opacity="0.4" />
+      <line x1="44" y1="96" x2="118" y2="96" strokeWidth="1.5" opacity="0.4" />
+    </FigureFrame>
+  )
+}
+
+// "Patient-owned data": a phone (the patient's device) holding a key, so the
+// record and the key to it live with the patient.
+export function DeviceKeyFigure({ className }: { className?: string }) {
+  return (
+    <FigureFrame className={className}>
+      {/* phone body */}
+      <rect x="66" y="20" width="68" height="100" rx="12" strokeWidth="1.75" />
+      {/* speaker + home indicator */}
+      <line x1="92" y1="29" x2="108" y2="29" strokeWidth="1.5" opacity="0.6" />
+      <line x1="90" y1="111" x2="110" y2="111" strokeWidth="1.5" opacity="0.6" />
+      {/* key: ring + shaft + teeth, centered on the screen */}
+      <circle cx="89" cy="62" r="9" strokeWidth="1.75" />
+      <line x1="96" y1="69" x2="116" y2="89" strokeWidth="1.75" />
+      <line x1="110" y1="83" x2="116" y2="77" strokeWidth="1.75" />
+      <line x1="116" y1="89" x2="121" y2="84" strokeWidth="1.75" />
+    </FigureFrame>
+  )
+}
+
+// "Self-hosted & open": a stack of servers under an open padlock, so it runs on
+// your own machines, and the source is open.
+export function SelfHostFigure({ className }: { className?: string }) {
+  return (
+    <FigureFrame className={className}>
+      {/* open padlock */}
+      <rect x="84" y="40" width="32" height="24" rx="5" strokeWidth="1.75" />
+      <path d="M90 40 v-6 a10 10 0 0 1 20 0" strokeWidth="1.75" opacity="0.85" />
+      <circle cx="100" cy="51" r="2.4" fill="currentColor" stroke="none" />
+      {/* server stack */}
+      <rect x="60" y="74" width="80" height="18" rx="5" strokeWidth="1.6" />
+      <rect x="60" y="96" width="80" height="18" rx="5" strokeWidth="1.6" opacity="0.7" />
+      <circle cx="71" cy="83" r="2.2" fill="currentColor" stroke="none" />
+      <circle cx="71" cy="105" r="2.2" fill="currentColor" stroke="none" opacity="0.7" />
+      <line x1="82" y1="83" x2="128" y2="83" strokeWidth="1.5" opacity="0.5" />
+      <line x1="82" y1="105" x2="128" y2="105" strokeWidth="1.5" opacity="0.35" />
+    </FigureFrame>
+  )
+}
+
+// Fig 1: a rising growth curve with a fine vertical-hatch fill beneath it.
 export function AreaFigure({ className }: { className?: string }) {
   const W = 320
   const H = 140
@@ -78,7 +166,7 @@ export function AreaFigure({ className }: { className?: string }) {
   )
 }
 
-// Fig 2 — a grid of dots at varying opacity (the "contributors" matrix look).
+// Fig 2: a grid of dots at varying opacity (the "contributors" matrix look).
 export function DotMatrixFigure({ className }: { className?: string }) {
   const cols = 20
   const rows = 9
@@ -117,7 +205,7 @@ export function DotMatrixFigure({ className }: { className?: string }) {
   )
 }
 
-// Fig 3 — a noisy bar histogram.
+// Fig 3: a noisy bar histogram.
 export function BarsFigure({ className }: { className?: string }) {
   const n = 44
   const W = 320

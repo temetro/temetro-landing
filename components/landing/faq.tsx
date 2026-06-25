@@ -9,11 +9,11 @@ import { Badge } from "@/components/ui/badge"
 const faqs = [
   {
     q: "What is temetro?",
-    a: "temetro is an open-source workspace for clinics: patient records, scheduling, prescriptions, notes, and tasks in one place, with role-based access for your care team — plus a built-in AI chat to find what you need by asking.",
+    a: "temetro is an open-source workspace for clinics: patient records, scheduling, prescriptions, notes, and tasks in one place, with role-based access for your care team, plus a built-in AI chat to find what you need by asking.",
   },
   {
     q: "Does temetro help with HIPAA?",
-    a: "temetro gives you building blocks that support compliance — role-based access and self-hosting that keeps PHI on your own network. Because you deploy it, meeting HIPAA (or any regime) ultimately depends on your environment and controls.",
+    a: "temetro gives you building blocks that support compliance, like role-based access and self-hosting that keeps PHI on your own network. Because you deploy it, meeting HIPAA (or any regime) ultimately depends on your environment and controls.",
   },
   {
     q: "Where is patient data stored?",
@@ -21,11 +21,11 @@ const faqs = [
   },
   {
     q: "Can I self-host temetro?",
-    a: "Yes. Self-hosting is a first-class deployment option — Docker and Postgres — so you can run temetro on-prem or in a private cloud you control.",
+    a: "Yes. Self-hosting is a first-class deployment option, with Docker and Postgres, so you can run temetro on-prem or in a private cloud you control.",
   },
   {
     q: "Does it use AI?",
-    a: "Yes — temetro has a built-in AI chat for working with the record. It's model-agnostic, so you can connect a hosted model or run an open model locally depending on your privacy needs.",
+    a: "Yes. temetro has a built-in AI chat for working with the record. It's model-agnostic, so you can connect a hosted model or run an open model locally depending on your privacy needs.",
   },
   {
     q: "Is temetro really open source?",

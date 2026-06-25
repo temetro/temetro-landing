@@ -11,7 +11,7 @@ const columns = [
     links: [
       { label: "Features", href: "/#features" },
       { label: "Open source", href: "/#open-source" },
-      { label: "Privacy", href: "/#privacy" },
+      { label: "Story", href: "/story" },
       { label: "FAQ", href: "/#faq" },
     ],
   },
@@ -43,7 +43,7 @@ export function SiteFooter() {
               <span className="text-[15px] font-semibold tracking-tight">temetro</span>
             </Link>
             <p className="mt-4 text-sm text-pretty text-muted-foreground">
-              The open-source workspace for patient care — records, scheduling, prescriptions, and
+              The open-source workspace for patient care. Records, scheduling, prescriptions, and
               notes in one place.
             </p>
           </div>

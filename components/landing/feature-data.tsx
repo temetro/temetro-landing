@@ -38,7 +38,7 @@ export const features: Feature[] = [
     badge: "AI Chat",
     title: "Ask for a chart, get the record back",
     subtitle:
-      "temetro's home screen is a chat. Ask in plain language — or type a quick command — and get clean record cards back, not a wall of text.",
+      "temetro's home screen is a chat. Ask in plain language, or type a quick command, and get clean record cards back instead of a wall of text.",
     sections: [
       {
         title: "Plain-language lookups",
@@ -46,7 +46,7 @@ export const features: Feature[] = [
       },
       {
         title: "Bring your own model",
-        body: "Connect an OpenAI, Anthropic, or Gemini key, or run a local model with Ollama — all from Settings. You're never locked into one vendor.",
+        body: "Connect an OpenAI, Anthropic, or Gemini key, or run a local model with Ollama, all from Settings. You're never locked into one vendor.",
       },
       {
         title: "Safe by design",
@@ -67,7 +67,7 @@ export const features: Feature[] = [
     badge: "Patient records",
     title: "Every patient's story, organized",
     subtitle:
-      "Demographics, allergies, medications, problems, labs, and encounters — laid out as tidy record cards you can read at a glance and open for the detail.",
+      "Demographics, allergies, medications, problems, labs, and encounters, laid out as tidy record cards you can read at a glance and open for the detail.",
     sections: [
       {
         title: "Cards, not clutter",
@@ -75,7 +75,7 @@ export const features: Feature[] = [
       },
       {
         title: "Create, edit, and transfer",
-        body: "Register a patient in seconds, keep their record up to date, and move it between clinics when care changes hands — all from the same workspace.",
+        body: "Register a patient in seconds, keep their record up to date, and move it between clinics when care changes hands, all from the same workspace.",
       },
       {
         title: "Import from anywhere",
@@ -91,7 +91,7 @@ export const features: Feature[] = [
     badge: "Patient Portal",
     title: "Let patients book themselves in",
     subtitle:
-      "A calm, full-screen self-service page for a waiting-room tablet — no login, no menus. Patients book a visit or check on results on their own.",
+      "A calm, full-screen self-service page for a waiting-room tablet, with no login and no menus. Patients book a visit or check on results on their own.",
     sections: [
       {
         title: "Booking without the front desk",
@@ -99,7 +99,7 @@ export const features: Feature[] = [
       },
       {
         title: "Results, the safe way",
-        body: "Patients can see their upcoming visits and whether results are ready — never the clinical values themselves — and are asked to review them with a staff member.",
+        body: "Patients can see their upcoming visits and whether results are ready, never the clinical values themselves, and are asked to review them with a staff member.",
       },
       {
         title: "Private by default",
@@ -115,7 +115,7 @@ export const features: Feature[] = [
     badge: "Messaging",
     title: "Talk to your team, in context",
     subtitle:
-      "Private, real-time chat for your clinic's staff — direct messages and groups, with files and appointment cards shared inline.",
+      "Private, real-time chat for your clinic's staff, with direct messages and groups, and files and appointment cards shared inline.",
     sections: [
       {
         title: "Instant and clinic-only",
@@ -123,11 +123,11 @@ export const features: Feature[] = [
       },
       {
         title: "Share more than text",
-        body: "Attach files or send an appointment as a tidy card — a snapshot that still reads correctly even if the appointment changes later.",
+        body: "Attach files or send an appointment as a tidy card, a snapshot that still reads correctly even if the appointment changes later.",
       },
       {
         title: "System notices that stand out",
-        body: "Automated alerts — like a teammate's password-reset request — arrive as clearly marked, read-only System messages so you always know what's from a person and what's from temetro.",
+        body: "Automated alerts, like a teammate's password-reset request, arrive as clearly marked, read-only System messages so you always know what's from a person and what's from temetro.",
       },
     ],
   },
@@ -139,11 +139,11 @@ export const features: Feature[] = [
     badge: "Meetings",
     title: "Jump on a call, right where you work",
     subtitle:
-      "Discord-style voice and video rooms for your team — plus a calendar to plan ahead. No extra app, no accounts to manage.",
+      "Discord-style voice and video rooms for your team, plus a calendar to plan ahead. No extra app, no accounts to manage.",
     sections: [
       {
         title: "Rooms your team can hop into",
-        body: "Create a room, share it across the clinic, and join with one click. Ring a teammate in, share your screen, and see who's speaking — calls connect peer-to-peer, so media never passes through our servers.",
+        body: "Create a room, share it across the clinic, and join with one click. Ring a teammate in, share your screen, and see who's speaking. Calls connect peer-to-peer, so media never passes through our servers.",
       },
       {
         title: "Plan ahead",
@@ -159,11 +159,11 @@ export const features: Feature[] = [
     badge: "Pharmacy",
     title: "From prescription to dispensed",
     subtitle:
-      "Work the dispensing queue and keep an eye on stock — prescriptions and inventory live right alongside the patient record.",
+      "Work the dispensing queue and keep an eye on stock, with prescriptions and inventory right alongside the patient record.",
     sections: [
       {
         title: "A queue that keeps up",
-        body: "See what needs dispensing, mark it done, and keep a clean ledger of every dispense — tied to the patient and the prescriber.",
+        body: "See what needs dispensing, mark it done, and keep a clean ledger of every dispense, tied to the patient and the prescriber.",
       },
       {
         title: "Know what's running low",
@@ -171,7 +171,7 @@ export const features: Feature[] = [
       },
       {
         title: "Scoped to the right people",
-        body: "Pharmacy staff get exactly the access they need — read and fill prescriptions — without the rest of the clinical record.",
+        body: "Pharmacy staff get exactly the access they need, to read and fill prescriptions, without the rest of the clinical record.",
       },
     ],
   },

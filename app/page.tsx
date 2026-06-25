@@ -2,7 +2,8 @@ import { SiteHeader } from "@/components/landing/site-header"
 import { Hero } from "@/components/landing/hero"
 import { OpenSource } from "@/components/landing/open-source"
 import { Features } from "@/components/landing/features"
-import { Privacy } from "@/components/landing/privacy"
+import { ProductShowcase } from "@/components/landing/product-showcase"
+import { WalletApp } from "@/components/landing/wallet-app"
 import { Faq } from "@/components/landing/faq"
 import { CtaBand } from "@/components/landing/cta"
 import { SiteFooter } from "@/components/landing/site-footer"
@@ -15,7 +16,8 @@ export default function Home() {
         <Hero />
         <OpenSource />
         <Features />
-        <Privacy />
+        <ProductShowcase />
+        <WalletApp />
         <Faq />
         <CtaBand />
       </main>
