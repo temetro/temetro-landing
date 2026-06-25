@@ -13,9 +13,10 @@ import { cn } from "@/lib/utils"
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
-// The patient wallet app (the Temetro Expo companion, still in alpha). A neutral
-// bento that matches the rest of the site: a line-art phone centerpiece flanked
-// by design-system cards, revealed on scroll with GSAP.
+// The patient wallet app (the Temetro Expo companion, still in alpha). The four
+// feature cards sit in a 2x2 bento; the phone card is the centre tile. On scroll
+// the phone travels down into the middle of the four cards (a smooth, un-pinned
+// GSAP scrub) and the cards settle into place around it.
 const cards = [
   {
     icon: ShieldCheck,
@@ -39,27 +40,63 @@ const cards = [
   },
 ]
 
+// Bento placement: two cards down the left column, two down the right, with the
+// phone in the centre column spanning both rows.
+const placement = [
+  "lg:col-start-1 lg:row-start-1",
+  "lg:col-start-1 lg:row-start-2",
+  "lg:col-start-3 lg:row-start-1",
+  "lg:col-start-3 lg:row-start-2",
+]
+
 export function WalletApp() {
   const root = useRef<HTMLDivElement>(null)
+  const stage = useRef<HTMLDivElement>(null)
 
   useGSAP(
     () => {
-      gsap.from(".bento-reveal", {
-        opacity: 0,
-        y: 24,
-        duration: 0.6,
-        ease: "power2.out",
-        stagger: 0.1,
-        // clearProps so no inline opacity is left behind once revealed.
-        clearProps: "opacity,transform",
-        scrollTrigger: {
-          trigger: root.current,
-          start: "top 85%",
-          once: true,
+      const mm = gsap.matchMedia()
+
+      // Desktop with motion allowed: scrub the phone down into the centre as the
+      // bento passes through the viewport, and ease the cards in around it.
+      mm.add(
+        "(min-width: 1024px) and (prefers-reduced-motion: no-preference)",
+        () => {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: stage.current,
+              start: "top bottom",
+              end: "center center",
+              scrub: 0.6,
+            },
+          })
+          tl.fromTo(
+            ".wallet-phone",
+            { y: -150, scale: 0.94, autoAlpha: 0.4 },
+            { y: 0, scale: 1, autoAlpha: 1, ease: "none" },
+            0,
+          ).fromTo(
+            ".wallet-card",
+            { y: 24, scale: 0.96, autoAlpha: 0 },
+            { y: 0, scale: 1, autoAlpha: 1, ease: "none", stagger: 0.08 },
+            0,
+          )
         },
-      })
-      // Recompute trigger positions after layout/images settle, so the reveal
-      // always fires (the round-1 bug left cards stuck at opacity 0).
+      )
+
+      // Mobile / reduced-motion: no movement, just make sure everything shows.
+      mm.add(
+        "(max-width: 1023px), (prefers-reduced-motion: reduce)",
+        () => {
+          gsap.set([".wallet-phone", ".wallet-card"], {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+          })
+        },
+      )
+
+      // Recompute trigger positions after layout/images settle.
       ScrollTrigger.refresh()
     },
     { scope: root },
@@ -83,38 +120,43 @@ export function WalletApp() {
         </p>
       </div>
 
-      {/* Bento: line-art phone centerpiece flanked by feature cards. */}
-      <div className="mt-12 grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
-        {/* Phone (center, spans both rows on desktop) */}
-        <Card className="bento-reveal order-first items-center justify-center py-8 lg:order-none lg:col-start-2 lg:row-span-2">
-          <CardContent className="flex h-full w-full items-center justify-center">
-            <div className="h-64 w-full max-w-[15rem] text-foreground">
-              <WalletPhoneFigure />
-            </div>
-          </CardContent>
-        </Card>
+      {/* Bento stage: four feature cards in a 2x2, phone in the centre column. */}
+      <div ref={stage} className="relative mt-12">
+        {/* soft neutral glow behind the centre phone */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -z-10 size-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground/5 blur-3xl"
+        />
 
-        {/* Feature cards, two per side. */}
-        {cards.map((card, i) => (
-          <Card
-            key={card.title}
-            size="sm"
-            className={cn(
-              "bento-reveal gap-0 justify-center",
-              i < 2 ? "lg:col-start-1" : "lg:col-start-3",
-            )}
-          >
-            <CardContent className="flex flex-col gap-3">
-              <div className="flex size-10 items-center justify-center rounded-xl border border-border bg-background text-foreground">
-                <card.icon className="size-5" />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <CardTitle>{card.title}</CardTitle>
-                <CardDescription>{card.body}</CardDescription>
+        <div className="grid gap-5 lg:grid-cols-3 lg:grid-rows-2">
+          {/* Phone (centre column, spans both rows on desktop) */}
+          <Card className="wallet-phone order-first items-center justify-center py-8 shadow-lg ring-1 ring-foreground/10 lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1">
+            <CardContent className="flex h-full w-full items-center justify-center">
+              <div className="h-64 w-full max-w-[14rem] text-foreground">
+                <WalletPhoneFigure />
               </div>
             </CardContent>
           </Card>
-        ))}
+
+          {/* Feature cards, two per side. */}
+          {cards.map((card, i) => (
+            <Card
+              key={card.title}
+              size="sm"
+              className={cn("wallet-card justify-center gap-0", placement[i])}
+            >
+              <CardContent className="flex flex-col gap-3">
+                <div className="flex size-10 items-center justify-center rounded-xl border border-border bg-background text-foreground">
+                  <card.icon className="size-5" />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <CardTitle>{card.title}</CardTitle>
+                  <CardDescription>{card.body}</CardDescription>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   )
