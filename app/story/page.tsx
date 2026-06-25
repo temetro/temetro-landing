@@ -114,10 +114,11 @@ export default function StoryPage() {
             <section>
               <h2 className="text-2xl font-semibold tracking-tight">Where we are</h2>
               <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-                temetro is early and openly in development. The workspace is real and you
-                can run it today, while parts of the vision, like fully patient-owned
-                records and the companion wallet app, are still being built in the open.
-                If any of this sounds like a problem you know, we would love your help.
+                The platform is in beta and openly in development. The workspace is real
+                and you can run it today, while parts of the vision are still being built
+                in the open, including the patient-owned wallet app, a separate companion
+                still in early alpha. If any of this sounds like a problem you know, we
+                would love your help.
               </p>
             </section>
           </div>
