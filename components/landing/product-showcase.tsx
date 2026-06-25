@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { AnimatePresence, motion } from "framer-motion"
 
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
@@ -43,7 +42,6 @@ const items = [
 
 export function ProductShowcase() {
   const [active, setActive] = useState(0)
-  const current = items[active]
 
   return (
     <section
@@ -61,7 +59,8 @@ export function ProductShowcase() {
       </div>
 
       <div className="mt-12 grid items-center gap-8 lg:grid-cols-[0.9fr_1.4fr] lg:gap-12">
-        {/* Selectable feature list */}
+        {/* Selectable feature list. Descriptions are always shown (uniform
+            spacing); the active item gets the card highlight. */}
         <ul className="flex flex-col gap-2">
           {items.map((item, i) => {
             const selected = i === active
@@ -70,7 +69,6 @@ export function ProductShowcase() {
                 <button
                   type="button"
                   onClick={() => setActive(i)}
-                  onMouseEnter={() => setActive(i)}
                   aria-pressed={selected}
                   className={cn(
                     "w-full rounded-2xl border px-5 py-4 text-left transition-colors",
@@ -87,14 +85,7 @@ export function ProductShowcase() {
                   >
                     {item.title}
                   </span>
-                  <span
-                    className={cn(
-                      "mt-1 block text-sm text-pretty transition-all",
-                      selected
-                        ? "text-muted-foreground"
-                        : "text-muted-foreground/0 max-lg:text-muted-foreground",
-                    )}
-                  >
+                  <span className="mt-1 block text-sm text-pretty text-muted-foreground">
                     {item.desc}
                   </span>
                 </button>
@@ -103,27 +94,23 @@ export function ProductShowcase() {
           })}
         </ul>
 
-        {/* Screenshot panel */}
+        {/* Screenshot panel. All images are rendered and eager-loaded, then
+            cross-faded purely with opacity so switching is instant (no refetch). */}
         <div className="relative aspect-[2940/1410] w-full overflow-hidden rounded-2xl border border-border bg-card/30 shadow-2xl shadow-black/20">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current.key}
-              initial={{ opacity: 0, scale: 1.01 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.99 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={current.src}
-                alt={current.alt}
-                fill
-                priority={active === 0}
-                sizes="(min-width: 1024px) 60vw, 100vw"
-                className="object-cover object-left-top"
-              />
-            </motion.div>
-          </AnimatePresence>
+          {items.map((item, i) => (
+            <Image
+              key={item.key}
+              src={item.src}
+              alt={item.alt}
+              fill
+              priority
+              sizes="(min-width: 1024px) 60vw, 100vw"
+              className={cn(
+                "object-cover object-left-top transition-opacity duration-300 ease-out",
+                i === active ? "opacity-100" : "opacity-0",
+              )}
+            />
+          ))}
         </div>
       </div>
     </section>

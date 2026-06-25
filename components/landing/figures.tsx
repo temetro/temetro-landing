@@ -101,6 +101,46 @@ export function SelfHostFigure({ className }: { className?: string }) {
   )
 }
 
+// Wallet app centerpiece: a detailed line-art phone showing the wallet number,
+// a clinic approval request, and an on-device lock. Same line-art family as the
+// Open Source figures (server-rendered, currentColor, no deps). Portrait frame.
+export function WalletPhoneFigure({ className }: { className?: string }) {
+  return (
+    <FigureFrame className={className} viewBox="0 0 160 220">
+      {/* device body */}
+      <rect x="34" y="10" width="92" height="200" rx="18" strokeWidth="1.75" />
+      {/* speaker */}
+      <line x1="68" y1="22" x2="92" y2="22" strokeWidth="1.5" opacity="0.6" />
+      {/* app header: logo dot + title bar */}
+      <circle cx="50" cy="40" r="3" strokeWidth="1.4" />
+      <line x1="58" y1="40" x2="92" y2="40" strokeWidth="1.5" />
+      {/* wallet-number card */}
+      <rect x="46" y="54" width="68" height="40" rx="7" strokeWidth="1.6" />
+      <line x1="54" y1="66" x2="84" y2="66" strokeWidth="1.4" opacity="0.55" />
+      <line x1="54" y1="78" x2="106" y2="78" strokeWidth="1.5" />
+      {/* small key glyph in the card corner */}
+      <circle cx="98" cy="65" r="3.4" strokeWidth="1.4" />
+      <line x1="100.4" y1="67.4" x2="106" y2="73" strokeWidth="1.4" />
+      <line x1="103" y1="76" x2="106" y2="73" strokeWidth="1.4" />
+      {/* approval request row (approved: check in circle) */}
+      <circle cx="56" cy="116" r="7" strokeWidth="1.6" />
+      <path d="M52.5 116 l2.5 2.5 l4.5 -5" strokeWidth="1.6" />
+      <line x1="70" y1="113" x2="110" y2="113" strokeWidth="1.5" />
+      <line x1="70" y1="121" x2="98" y2="121" strokeWidth="1.4" opacity="0.5" />
+      {/* pending row */}
+      <circle cx="56" cy="142" r="7" strokeWidth="1.6" opacity="0.7" />
+      <line x1="70" y1="139" x2="106" y2="139" strokeWidth="1.5" opacity="0.7" />
+      <line x1="70" y1="147" x2="92" y2="147" strokeWidth="1.4" opacity="0.4" />
+      {/* on-device padlock */}
+      <rect x="68" y="170" width="24" height="18" rx="4" strokeWidth="1.6" />
+      <path d="M73 170 v-4 a7 7 0 0 1 14 0" strokeWidth="1.6" opacity="0.85" />
+      <circle cx="80" cy="179" r="1.8" fill="currentColor" stroke="none" />
+      {/* home indicator */}
+      <line x1="68" y1="200" x2="92" y2="200" strokeWidth="1.5" opacity="0.6" />
+    </FigureFrame>
+  )
+}
+
 // Fig 1: a rising growth curve with a fine vertical-hatch fill beneath it.
 export function AreaFigure({ className }: { className?: string }) {
   const W = 320
