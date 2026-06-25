@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react"
 
 // A Polar-style hero visual: an abstract orbital figure (concentric rings with
 // slowly orbiting nodes) behind the feature's icon. Dependency-free SVG + CSS
-// animation — no three.js, no client hooks — so it matches the rest of the
+// animation, no three.js, no client hooks, so it matches the rest of the
 // landing page and renders on the server. Respects prefers-reduced-motion.
 export function FeatureFigure({ icon: Icon }: { icon: LucideIcon }) {
   const C = 200 // center
@@ -61,7 +61,7 @@ export function FeatureFigure({ icon: Icon }: { icon: LucideIcon }) {
             />
           )
         })}
-        {/* orbiting nodes — each group rotates around the center */}
+        {/* orbiting nodes, each group rotates around the center */}
         {orbits.map(([r, angle, dur, reverse], i) => {
           const rad = (angle * Math.PI) / 180
           const cx = C + Math.cos(rad) * r
@@ -72,7 +72,7 @@ export function FeatureFigure({ icon: Icon }: { icon: LucideIcon }) {
               className="animate-spin motion-reduce:animate-none"
               style={{
                 // Rotate around the viewBox center (200,200), not the node's own
-                // bounding box — otherwise the dot would spin in place.
+                // bounding box, otherwise the dot would spin in place.
                 transformBox: "view-box",
                 transformOrigin: "200px 200px",
                 animationDuration: `${dur}s`,

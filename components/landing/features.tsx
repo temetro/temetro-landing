@@ -1,10 +1,10 @@
 import {
   ArrowRight,
   CalendarClock,
-  GitFork,
-  KeyRound,
   MessageSquare,
-  Server,
+  Pill,
+  ShieldCheck,
+  StickyNote,
   Users,
 } from "lucide-react"
 
@@ -12,36 +12,39 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 
+// Focused on what a clinic actually does day to day. The "open source" and
+// "self-hostable" story lives one section up, so it is not repeated here; the
+// single privacy card folds in the points that used to be their own section.
 const features = [
   {
     icon: Users,
     title: "Patient records",
-    desc: "Pull up, create, and edit a patient's history, medications, and labs — organized into clean record cards.",
-  },
-  {
-    icon: KeyRound,
-    title: "Role-based access",
-    desc: "Owner, admin, clinician, reception, pharmacy, and lab roles per clinic, so your team only ever sees what it should.",
+    desc: "Pull up, create, and edit a patient's history, medications, and labs, all laid out as clean record cards.",
   },
   {
     icon: CalendarClock,
-    title: "Your clinic in one place",
-    desc: "Scheduling, prescriptions, notes, and tasks live alongside the record — not scattered across tools.",
+    title: "Scheduling & appointments",
+    desc: "Book visits, run the day's schedule, and see what is coming up, right next to the patient's chart.",
+  },
+  {
+    icon: Pill,
+    title: "Prescriptions & pharmacy",
+    desc: "Prescribe, work the dispensing queue, and watch stock levels without leaving the record.",
+  },
+  {
+    icon: StickyNote,
+    title: "Notes & tasks",
+    desc: "Keep clinical notes and a shared care-team to-do list in step with everything else the clinic is doing.",
   },
   {
     icon: MessageSquare,
     title: "Ask in plain language",
-    desc: "A built-in, model-agnostic AI chat that finds what you need across the record — just ask.",
+    desc: "A built-in, model-agnostic AI chat that finds what you need across the record. Just ask.",
   },
   {
-    icon: Server,
-    title: "Self-hostable",
-    desc: "Run temetro on your own infrastructure with Docker and Postgres. Patient data stays on your network.",
-  },
-  {
-    icon: GitFork,
-    title: "Open source",
-    desc: "Audit every line, extend it to your workflow, and contribute back. No black boxes.",
+    icon: ShieldCheck,
+    title: "Private by architecture",
+    desc: "PHI stays inside your own network, and per-clinic roles gate who can see and change each record.",
   },
 ]
 
@@ -54,8 +57,8 @@ export function Features() {
           Everything around the patient record
         </h2>
         <p className="mt-4 text-pretty text-muted-foreground">
-          temetro brings the day-to-day of clinical work — records, scheduling, prescriptions, notes,
-          and tasks — into one open-source workspace your whole team can use.
+          One workspace for the whole clinic. Records, scheduling, prescriptions, notes,
+          and tasks sit together, so your team stops jumping between disconnected tools.
         </p>
       </div>
 

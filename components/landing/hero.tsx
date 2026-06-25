@@ -32,7 +32,7 @@ export function Hero() {
         </h1>
 
         <p className="mx-auto mt-5 max-w-xl text-base text-pretty text-muted-foreground sm:text-lg">
-          Patient records, scheduling, prescriptions and notes in one place — with role-based access,
+          Patient records, scheduling, prescriptions and notes in one place, with role-based access,
           a built-in AI chat, and self-hosting by design.
         </p>
 

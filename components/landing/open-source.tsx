@@ -1,5 +1,9 @@
 import { Badge } from "@/components/ui/badge"
-import { AreaFigure, BarsFigure, DotMatrixFigure } from "@/components/landing/figures"
+import {
+  DeviceKeyFigure,
+  RecordsFigure,
+  SelfHostFigure,
+} from "@/components/landing/figures"
 
 // The reference image's "open-source stats" band, reframed honestly for temetro:
 // instead of vanity adoption metrics, the three monochrome figures illustrate the
@@ -9,19 +13,19 @@ const figures = [
     n: "Fig 1.",
     title: "Your records, organized",
     desc: "Pull up a patient's history as clean record cards.",
-    Figure: AreaFigure,
+    Figure: RecordsFigure,
   },
   {
     n: "Fig 2.",
     title: "Patient-owned data",
-    desc: "The model temetro is building toward — records on the patient's own device.",
-    Figure: DotMatrixFigure,
+    desc: "The model temetro is building toward, with records on the patient's own device.",
+    Figure: DeviceKeyFigure,
   },
   {
     n: "Fig 3.",
     title: "Self-hosted & open",
     desc: "Run it entirely on your own infrastructure.",
-    Figure: BarsFigure,
+    Figure: SelfHostFigure,
   },
 ]
 
@@ -48,7 +52,7 @@ export function OpenSource() {
         </p>
       </div>
 
-      {/* Terminal-style callout — honest framing, no invented numbers. */}
+      {/* Terminal-style callout: honest framing, no invented numbers. */}
       <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-border bg-card/30 px-5 py-4">
         <p className="font-mono text-sm/6 text-muted-foreground">
           <span className="text-foreground">[*]</span> temetro is{" "}

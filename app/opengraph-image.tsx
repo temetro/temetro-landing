@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "temetro — the open-source workspace for patient care";
+  "temetro: the open-source workspace for patient care";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -61,7 +61,7 @@ export default function OpengraphImage() {
               lineHeight: 1.3,
             }}
           >
-            Patient records, scheduling, prescriptions, and notes — self-hostable,
+            Patient records, scheduling, prescriptions, and notes. Self-hostable,
             with role-based access for your whole care team.
           </div>
         </div>

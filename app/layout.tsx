@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 
 const siteUrl = "https://temetro.com";
 const siteName = "temetro";
-const title = "temetro — the open-source workspace for patient care";
+const title = "temetro: the open-source workspace for patient care";
 const description =
-  "An open-source, self-hostable clinical workspace: patient records, scheduling, prescriptions, and notes with role-based access for your care team — plus an AI chat in active development.";
+  "An open-source, self-hostable clinical workspace: patient records, scheduling, prescriptions, and notes with role-based access for your care team, plus an AI chat in active development.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
