@@ -35,7 +35,7 @@ export function FeaturePage({ feature }: { feature: Feature }) {
               <Button
                 className="group"
                 nativeButton={false}
-                render={<Link href="/register" />}
+                render={<Link href="https://docs.temetro.com/docs" />}
                 size="lg"
               >
                 Get started

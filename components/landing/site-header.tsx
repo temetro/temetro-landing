@@ -51,7 +51,7 @@ export function SiteHeader() {
           >
             <GitHubIcon className="size-[18px]" />
           </Button>
-          <Button nativeButton={false} render={<Link href="/register" />} size="sm">
+          <Button nativeButton={false} render={<Link href="https://docs.temetro.com/docs" />} size="sm">
             Get started
           </Button>
         </div>
