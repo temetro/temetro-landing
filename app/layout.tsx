@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://temetro.com";
+const siteUrl = "https://www.temetro.com";
 const siteName = "temetro";
 const title = "temetro: the open-source workspace for patient care";
 const description =

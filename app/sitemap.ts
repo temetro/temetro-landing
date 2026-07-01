@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { featureSlugs } from "@/components/landing/feature-data";
 
-const siteUrl = "https://temetro.com";
+const siteUrl = "https://www.temetro.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
