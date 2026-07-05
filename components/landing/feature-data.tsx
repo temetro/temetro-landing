@@ -2,6 +2,7 @@ import {
   type LucideIcon,
   CalendarClock,
   MessagesSquare,
+  Network,
   Pill,
   Sparkles,
   Tablet,
@@ -172,6 +173,35 @@ export const features: Feature[] = [
       {
         title: "Scoped to the right people",
         body: "Pharmacy staff get exactly the access they need, to read and fill prescriptions, without the rest of the clinical record.",
+      },
+    ],
+  },
+  {
+    slug: "network",
+    icon: Network,
+    navTitle: "Temetro Network",
+    navDesc: "The fast, reliable link to patient wallets",
+    badge: "Temetro Network",
+    title: "A dedicated network between the clinic and the patient's phone",
+    subtitle:
+      "Temetro Network is a small, high-performance relay that connects the clinic to a patient's wallet app. It replaces the flaky tunnel that used to make sharing work sometimes and not others, so importing a record just works.",
+    sections: [
+      {
+        title: "Built for reliability",
+        body: "Written in Rust and always on at a stable address, the network is a single job done well: route messages between the clinic and the right phone. No ephemeral tunnels, no cold starts, no “couldn't reach the clinic” when a patient scans the QR.",
+      },
+      {
+        title: "A relay that can't read your records",
+        body: "The network is a dumb pipe by design. It forwards sealed, end-to-end-encrypted bundles that only the clinic can open, and it stores nothing. The only thing it checks is that a phone really controls its wallet before routing to it.",
+        bullets: [
+          "Records are sealed on the phone and opened only by the clinic",
+          "The relay forwards ciphertext and keeps no database",
+          "Every device proves control of its wallet with a signature",
+        ],
+      },
+      {
+        title: "Yours to host",
+        body: "The network is open source and deploys in minutes on Railway or any container host. Point your clinic and the wallet app at it, and the whole share-and-approve flow runs on infrastructure you control.",
       },
     ],
   },
