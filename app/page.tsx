@@ -3,6 +3,7 @@ import { Hero } from "@/components/landing/hero"
 import { OpenSource } from "@/components/landing/open-source"
 import { Features } from "@/components/landing/features"
 import { ProductShowcase } from "@/components/landing/product-showcase"
+import { TemetroNetwork } from "@/components/landing/temetro-network"
 import { WalletApp } from "@/components/landing/wallet-app"
 import { Faq } from "@/components/landing/faq"
 import { CtaBand } from "@/components/landing/cta"
@@ -17,6 +18,7 @@ export default function Home() {
         <OpenSource />
         <Features />
         <ProductShowcase />
+        <TemetroNetwork />
         <WalletApp />
         <Faq />
         <CtaBand />
