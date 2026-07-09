@@ -24,7 +24,7 @@ export function FeaturePage({ feature }: { feature: Feature }) {
           </div>
 
           <div className="mx-auto max-w-3xl px-6 pt-24 pb-10 text-center sm:pt-32 sm:pb-12">
-            <Badge variant="outline">{feature.badge}</Badge>
+            <Badge variant="info">{feature.badge}</Badge>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
               {feature.title}
             </h1>

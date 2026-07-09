@@ -40,7 +40,7 @@ export default function StoryPage() {
       <main className="flex-1">
         <article className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
           <header className="text-center">
-            <Badge variant="outline">Our story</Badge>
+            <Badge variant="info">Our story</Badge>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
               Built in Djibouti, for clinics everywhere
             </h1>

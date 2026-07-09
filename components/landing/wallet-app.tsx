@@ -109,7 +109,7 @@ export function WalletApp() {
       className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20 sm:py-28"
     >
       <div className="max-w-2xl">
-        <Badge variant="outline">Companion app · Alpha</Badge>
+        <Badge variant="info">Companion app · Alpha</Badge>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           Your record, in your pocket
         </h2>

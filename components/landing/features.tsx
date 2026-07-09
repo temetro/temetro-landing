@@ -52,7 +52,7 @@ export function Features() {
   return (
     <section id="features" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-2xl text-center">
-        <Badge variant="outline">What is temetro?</Badge>
+        <Badge variant="info">What is temetro?</Badge>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           Everything around the patient record
         </h2>

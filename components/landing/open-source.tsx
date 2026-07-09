@@ -42,7 +42,7 @@ export function OpenSource() {
       className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20 sm:py-28"
     >
       <div className="mx-auto max-w-2xl text-center">
-        <Badge variant="outline">Open source</Badge>
+        <Badge variant="info">Open source</Badge>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           Built in the open, runs on your terms
         </h2>

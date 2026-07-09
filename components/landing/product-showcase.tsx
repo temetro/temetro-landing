@@ -49,7 +49,7 @@ export function ProductShowcase() {
       className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20 sm:py-28"
     >
       <div className="max-w-2xl">
-        <Badge variant="outline">A look inside</Badge>
+        <Badge variant="info">A look inside</Badge>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           The whole clinic, in one calm workspace
         </h2>
@@ -71,7 +71,7 @@ export function ProductShowcase() {
                   onClick={() => setActive(i)}
                   aria-pressed={selected}
                   className={cn(
-                    "w-full rounded-2xl border px-5 py-4 text-left transition-colors",
+                    "w-full cursor-pointer rounded-2xl border px-5 py-4 text-left transition-colors",
                     selected
                       ? "border-border bg-card/60"
                       : "border-transparent hover:bg-card/30",
