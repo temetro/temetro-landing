@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 
@@ -67,6 +68,42 @@ const arcs = [
 
 const chips = ["Stateless pipe", "Ciphertext only", "Always on"];
 
+// The globe is heavy WebGL (three.js, ~730 KB) and this section sits far below
+// the fold, so we don't mount it on hydration — that would download and run
+// three.js on the main thread during initial load and tank the page's blocking
+// time. Instead we wait until the section scrolls near the viewport, then mount
+// it once; the pulse placeholder holds the space until then.
+function LazyGlobe() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || show) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShow(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [show]);
+
+  return (
+    <div className="size-full" ref={ref}>
+      {show ? (
+        <World data={arcs} globeConfig={globeConfig} />
+      ) : (
+        <div className="size-full animate-pulse rounded-full bg-foreground/[0.03]" />
+      )}
+    </div>
+  );
+}
+
 export function TemetroNetwork() {
   return (
     <section
@@ -93,7 +130,7 @@ export function TemetroNetwork() {
           className="-z-10 absolute inset-x-0 top-1/2 mx-auto h-64 max-w-2xl -translate-y-1/2 rounded-full bg-info/10 blur-3xl"
         />
         <div className="mx-auto h-[360px] w-full max-w-2xl sm:h-[460px]">
-          <World globeConfig={globeConfig} data={arcs} />
+          <LazyGlobe />
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
