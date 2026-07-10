@@ -22,6 +22,41 @@ const title = "temetro: the open-source workspace for patient care";
 const description =
   "An open-source, self-hostable clinical workspace: patient records, scheduling, prescriptions, and notes with role-based access for your care team, plus an AI chat in active development.";
 
+const githubUrl = "https://github.com/temetro/temetro";
+
+// Structured data (schema.org) so search engines and AI assistants can parse what
+// temetro is. Invisible to users — rendered as a JSON-LD script in the document.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      name: siteName,
+      url: siteUrl,
+      description,
+      applicationCategory: "HealthApplication",
+      operatingSystem: "Web",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      license: `${githubUrl}/blob/main/LICENSE`,
+      author: { "@type": "Organization", name: siteName, url: siteUrl },
+      sameAs: [githubUrl],
+    },
+    {
+      "@type": "Organization",
+      name: siteName,
+      url: siteUrl,
+      description,
+      sameAs: [githubUrl],
+    },
+    {
+      "@type": "WebSite",
+      name: siteName,
+      url: siteUrl,
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -87,6 +122,10 @@ export default function RootLayout({
       className={cn("dark", "h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <Analytics />
       </body>

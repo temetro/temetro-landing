@@ -1,0 +1,30 @@
+# temetro
+
+> An open-source, self-hostable clinical workspace: patient records, scheduling, prescriptions, and notes with role-based access for your care team, plus an AI chat in active development.
+
+temetro is an open-source tool for clinics. Instead of clicking through menus and forms to find patient information, clinicians ask in plain language and temetro replies with organized record cards — demographics, vitals, allergies, medications, problems, labs, and encounters. It runs on your own infrastructure, supports multiple clinics with role-based access, and is free and open source. A longer-term goal is patient-owned records: a patient's record can live on their own device and clinicians' changes are cryptographically signed and only final once the patient approves them.
+
+## Pages
+
+- [Home](https://www.temetro.com): What temetro is — the open-source workspace for patient care.
+
+## Features
+
+- [AI Chat](https://www.temetro.com/features/ai-chat): Ask for any chart in plain language and get clean record cards back.
+- [Patient records](https://www.temetro.com/features/records): Clean cards for history, medications, and labs; create, edit, transfer, and import records.
+- [Patient Portal](https://www.temetro.com/features/portal): A no-login waiting-room kiosk for self-service booking and results.
+- [Messaging](https://www.temetro.com/features/messaging): Real-time, clinic-only team chat with files and appointment cards inline.
+- [Meetings](https://www.temetro.com/features/meetings): Built-in peer-to-peer voice and video rooms, plus a calendar.
+- [Pharmacy](https://www.temetro.com/features/pharmacy): A dispensing queue and medication stock control alongside the record.
+- [Temetro Network](https://www.temetro.com/features/network): A fast, reliable, self-hostable relay linking the clinic to patients' wallet apps.
+
+## Docs
+
+- [Documentation](https://docs.temetro.com/docs): Guides, quickstart, admin, and API reference.
+- [Quickstart](https://docs.temetro.com/docs/quickstart): Run temetro on your own computer in about five minutes.
+- [Roadmap](https://docs.temetro.com/docs/roadmap): What's built and what's coming next.
+- [Changelog](https://docs.temetro.com/docs/changelog): Notable changes and releases, newest first.
+
+## Source
+
+- [GitHub](https://github.com/temetro/temetro): Source code, issues, and license — temetro is open source.
