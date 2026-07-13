@@ -7,7 +7,7 @@ import { FeaturesMenu, ResourcesMenu } from "@/components/landing/nav-menu"
 
 const plainLinks = [
   { label: "Story", href: "/story" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Blog", href: "https://blog.temetro.com", external: true },
 ]
 
 export function SiteHeader() {
@@ -33,6 +33,9 @@ export function SiteHeader() {
             <Link
               key={link.label}
               href={link.href}
+              {...(link.external
+                ? { target: "_blank", rel: "noreferrer" }
+                : {})}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
