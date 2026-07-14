@@ -34,7 +34,7 @@ export function FeaturesMenu() {
           {features.map((feature) => (
             <Link
               key={feature.slug}
-              href={`/features/${feature.slug}`}
+              href={feature.href ?? `/features/${feature.slug}`}
               className="flex items-start gap-3 rounded-2xl p-3 transition-colors hover:bg-accent"
             >
               <div className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-border bg-background text-foreground">

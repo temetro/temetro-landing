@@ -4,6 +4,7 @@ import {
   MessagesSquare,
   Network,
   Pill,
+  Smartphone,
   Sparkles,
   Tablet,
   Users,
@@ -22,6 +23,10 @@ export type Feature = {
   // Short copy for the navbar mega-dropdown.
   navTitle: string
   navDesc: string
+  // Optional override for the dropdown link. When set, the item points here
+  // (e.g. the App entry → its own /app page) instead of /features/<slug>, and
+  // the entry is skipped by the generated /features/<slug> subpages.
+  href?: string
   // Long-form copy for the /features/<slug> page.
   badge: string
   title: string
@@ -205,10 +210,35 @@ export const features: Feature[] = [
       },
     ],
   },
+  {
+    slug: "app",
+    icon: Smartphone,
+    navTitle: "Patient app",
+    navDesc: "The wallet in your patient's pocket, coming soon",
+    href: "/app",
+    badge: "Patient app",
+    title: "Your record, in your pocket",
+    subtitle:
+      "The temetro wallet is a patient companion app for iPhone and Android, coming soon. It keeps a patient's record on their own device, sealed with a key only they hold.",
+    sections: [
+      {
+        title: "Patient-owned data",
+        body: "The record lives on the patient's own phone. Their wallet number is a key only they hold, so there is no account, no password, and no middleman.",
+      },
+      {
+        title: "Approve before it applies",
+        body: "Every change a clinic makes is sealed to the patient and waits for their approval on the phone before it counts. Nothing is written behind their back.",
+      },
+    ],
+  },
 ]
 
-export const featureSlugs = features.map((f) => f.slug)
+// The /features/<slug> subpages are generated from these; entries with a custom
+// href (like the App entry, which links to /app) are handled by their own page.
+export const featureSlugs = features
+  .filter((f) => !f.href)
+  .map((f) => f.slug)
 
 export function getFeature(slug: string): Feature | undefined {
-  return features.find((f) => f.slug === slug)
+  return features.find((f) => f.slug === slug && !f.href)
 }
