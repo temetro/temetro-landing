@@ -12,6 +12,14 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+
+    // Vendored components, copied in from upstream registries rather than
+    // hand-written. Re-linting them reports upstream's style back at us, and
+    // editing them here would be undone by the next update. `globe.tsx` is the
+    // three-globe/react-three-fiber showcase component (var, any, an effect
+    // that publishes its instance); `carousel.tsx` is the embla wrapper.
+    "components/ui/globe.tsx",
+    "components/ui/carousel.tsx",
   ]),
 ]);
 
