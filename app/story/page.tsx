@@ -6,11 +6,15 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { SiteHeader } from "@/components/landing/site-header"
 import { SiteFooter } from "@/components/landing/site-footer"
+import { JsonLd, breadcrumbList } from "@/components/landing/json-ld"
+
+const siteUrl = "https://www.temetro.com"
 
 export const metadata: Metadata = {
   title: "Our story",
   description:
     "Why temetro exists: a clinician's view from Djibouti, where everyday hospital software lags decades behind modern practice, and a bet that open, patient-owned tools can change that across Africa.",
+  alternates: { canonical: "/story" },
 }
 
 // A short, plain-spoken origin story. No em-dashes anywhere in the copy.
@@ -36,6 +40,12 @@ const principles = [
 export default function StoryPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbList([
+          { name: "Home", url: siteUrl },
+          { name: "Our story", url: `${siteUrl}/story` },
+        ])}
+      />
       <SiteHeader />
       <main className="flex-1">
         <article className="mx-auto max-w-3xl px-6 py-20 sm:py-28">

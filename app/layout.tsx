@@ -47,12 +47,14 @@ const jsonLd = {
       name: siteName,
       url: siteUrl,
       description,
+      logo: `${siteUrl}/temetro-logo.png`,
       sameAs: [githubUrl],
     },
     {
       "@type": "WebSite",
       name: siteName,
       url: siteUrl,
+      publisher: { "@type": "Organization", name: siteName, url: siteUrl },
     },
   ],
 };

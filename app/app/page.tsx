@@ -8,11 +8,17 @@ import { CtaBand } from "@/components/landing/cta"
 import { WalletPhoneFigure } from "@/components/landing/figures"
 import { SiteFooter } from "@/components/landing/site-footer"
 import { SiteHeader } from "@/components/landing/site-header"
+import { JsonLd, breadcrumbList } from "@/components/landing/json-ld"
+
+const siteUrl = "https://www.temetro.com"
 
 export const metadata: Metadata = {
-  title: "Patient app · temetro",
+  // Bare title: the layout template appends "· temetro" (avoids the old double
+  // suffix from hardcoding it here).
+  title: "Patient app",
   description:
     "The temetro wallet is a patient companion app for iPhone and Android, coming soon. It keeps a patient's record on their own device, sealed with a key only they hold.",
+  alternates: { canonical: "/app" },
 }
 
 // The four things the wallet app does, kept in step with the copy on the home
@@ -43,6 +49,12 @@ const points = [
 export default function AppPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbList([
+          { name: "Home", url: siteUrl },
+          { name: "Patient app", url: `${siteUrl}/app` },
+        ])}
+      />
       <SiteHeader />
       <main className="flex-1">
         <article className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
